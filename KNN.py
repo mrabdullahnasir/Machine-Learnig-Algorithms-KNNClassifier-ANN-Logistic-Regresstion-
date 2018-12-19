@@ -4,13 +4,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import confusion_matrix
-from sklearn.metrics import f1_score
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
-import matplotlib as mpl
 import matplotlib.pyplot as plt
 
-dataset = pd.read_csv("C:/Users/Usman Khan/Desktop/AI-Project/stack-overflow-2018-developer-survey/survey_results_public.csv")
+dataset = pd.read_csv("C:/Users/Usman Khan/Desktop/MachineLearning/stack-overflow-2018-developer-survey/survey_results_public.csv")
 # length of Data 
 print("Length of Data", len(dataset))
 dataset.drop(['CompanySize'], 1, inplace= True)
@@ -70,5 +68,6 @@ print("Accuracy", accuracy_score(Y_test, y_pred))
 #Grapgh
 
 plt.plot(Y_test, y_pred)
+#plt.plot(kind = "bar", title = "knn", figsize = (10, 8))
 plt.show()
 print("KNN")
